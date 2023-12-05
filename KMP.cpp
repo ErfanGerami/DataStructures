@@ -7,7 +7,7 @@ int* preProcess(string s) {
 	int len = 0;
 	while (pos < s.size()) {
 		if (s[len] == s[pos]) {
-			LPS[pos] = LPS[pos - 1] + 1;
+			LPS[pos] = len+1;
 			len++;
 			pos++;
 		}
