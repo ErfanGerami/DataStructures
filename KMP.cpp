@@ -7,7 +7,7 @@ int* preProcess(string s) {
 	int len = 0;
 	while (pos < s.size()) {
 		if (s[len] == s[pos]) {
-			LPS[pos] = LPS[pos - 1] + 1;
+			LPS[pos] = len+1;
 			len++;
 			pos++;
 		}
@@ -37,7 +37,7 @@ int find(string s, string pattern) {
 		else {
 			if (pos2 == 0) {
 				pos1++;
-				pos2++;
+				
 				
 			}
 			else {
@@ -48,10 +48,10 @@ int find(string s, string pattern) {
 
 		}
 	}
-	if (pos1 == s.size())
-		return -1;
-	else
+	if (pos1 == pattern.size())
 		return pos1 - pattern.size();
+	else
+		return -1;
 
 }
 int main()
